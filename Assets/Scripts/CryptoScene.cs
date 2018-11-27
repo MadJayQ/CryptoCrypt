@@ -12,5 +12,4 @@ public class CryptoScene : ScriptableObject {
 
 	public SceneLink[] Links;
 
-
 }
