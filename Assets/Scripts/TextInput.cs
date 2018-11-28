@@ -21,11 +21,14 @@ public class TextInput : MonoBehaviour {
 				m_Controller.Log(userInput);
 
 				var separatedInput = userInput.Split(delimeterCharacters);
-				foreach(var action in m_Controller.Actions)
+				if(separatedInput.Length > 0)
 				{
-					if(action.ContainsKey(separatedInput[0]))
+					foreach(var action in m_Controller.Actions)
 					{
-						action.RespondToInput(m_Controller, separatedInput);
+						if(action.ContainsKey(separatedInput[0]))
+						{
+							action.RespondToInput(m_Controller, separatedInput);
+						}
 					}
 				}
 				InputComplete();

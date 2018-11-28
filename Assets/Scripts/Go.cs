@@ -7,8 +7,15 @@ public class Go : InputAction
 {
     public override void RespondToInput(GameController controller, string[] inputText)
     {
-        controller.RoomNavigation.ChangeScene(
-            inputText[1]
-        );
+        if(inputText.Length < 2) 
+        {
+            controller.Log("How do you expect to go somewhere if you don't know where you want to go!");
+        } 
+        else 
+        {
+            controller.RoomNavigation.ChangeScene(
+                inputText[1]
+            );
+        }
     }
 }
